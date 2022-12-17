@@ -40,6 +40,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
         <StatusBar 
           style={theme === 'dark' ? 'light' : 'dark'} 
           backgroundColor={themes[theme].colors.background} 
+          translucent={false}
         />
       </StyledThemeProvider>
     </ThemeContext.Provider>
