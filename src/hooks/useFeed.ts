@@ -1,28 +1,27 @@
 import { faker } from '@faker-js/faker';
 import { useEffect, useState } from 'react';
 
-interface Feed {
-  id: string;
-  username: string;
-  avatar: string;
-  image: string;
-  likes: number;
-  comentaries: number;
-  description: string;
-}
+import { IPost } from '../dtos/post';
 
 export function useFeed() {
 
-  const [feed, setFeed] = useState<Feed[]>([]);
+  const [feed, setFeed] = useState<IPost[]>([]);
 
   function incrementFeed() {
     const newFeed = Array.from({ length: 10 }).map(() => ({
       id: faker.datatype.uuid(),
       username: faker.internet.userName(),
+      name: faker.name.fullName(),
       avatar: faker.image.avatar(),
       image: faker.image.image(),
-      likes: faker.datatype.number(),
-      comentaries: faker.datatype.number(),
+      likes: faker.datatype.number({
+        min: 0,
+        max: 1000,
+      }),
+      comentaries: faker.datatype.number({
+        min: 0,
+        max: 1000,
+      }),
       description: faker.lorem.sentence(),
     }));
 

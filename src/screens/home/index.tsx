@@ -3,14 +3,15 @@ import { FlashList } from '@shopify/flash-list'
 
 import { Logo } from '../../components/logo'
 import { useFeed } from '../../hooks/useFeed'
-import { Post } from './post.component'
+import { Post } from '../../components/post'
 
 import {
   Container, 
   Header, 
   HeaderRight, 
   HeaderRightButton, 
-  HeaderRightIcon
+  HeaderRightIcon,
+  ItemSeparator
 } from './styles'
 
 export function HomeScreen(){
@@ -37,6 +38,7 @@ export function HomeScreen(){
         estimatedItemSize={600}
         onEndReached={incrementFeed}
         onEndReachedThreshold={0.5}
+        ItemSeparatorComponent={ItemSeparator}
       />
     </Container>
   )
