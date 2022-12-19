@@ -1,15 +1,14 @@
 import React from 'react'
 
 import {
-  Container, Title
+  Container, 
+  Icon,
 } from './styles'
 
 export function Logo(){
   return (
     <Container>
-      <Title>
-        RNFeed
-      </Title>
+      <Icon name="timeline" />
     </Container>
   )
 }
