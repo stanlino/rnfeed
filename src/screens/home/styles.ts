@@ -1,6 +1,8 @@
 import styled from 'styled-components/native'
 import { Feather } from '@expo/vector-icons'
 
+const BORDER_WIDTH = 0.2
+
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
@@ -8,11 +10,13 @@ export const Container = styled.View`
 
 export const Header = styled.View`
   width: 100%;
-  height: 50px;
+  height: 60px;
   padding: 0 16px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-bottom-width: ${BORDER_WIDTH}px;
+  border-bottom-color: ${({ theme }) => theme.colors.disabled};
 `
 
 export const HeaderAction = styled.TouchableOpacity`
@@ -21,7 +25,7 @@ export const HeaderAction = styled.TouchableOpacity`
   width: 40px;
   height: 40px;
   border-color: ${({ theme }) => theme.colors.disabled};
-  border-width: 0.2px;
+  border-width: ${BORDER_WIDTH}px;
   border-radius: 20px;
 `
 

@@ -15,7 +15,7 @@ import {
 
 export function HomeScreen(){
 
-  const { feed, incrementFeed } = useFeed()
+  const { feed, loadPosts } = useFeed()
 
   return (
     <Container>
@@ -33,9 +33,11 @@ export function HomeScreen(){
         keyExtractor={item => item.id}
         renderItem={Post}
         estimatedItemSize={600}
-        onEndReached={incrementFeed}
+        onEndReached={loadPosts}
         onEndReachedThreshold={0.5}
         ItemSeparatorComponent={ItemSeparator}
+        onRefresh={loadPosts}
+        refreshing={false}
       />
     </Container>
   )

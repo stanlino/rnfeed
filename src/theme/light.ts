@@ -3,8 +3,8 @@ const light = {
     primary: '#9ad9d8',
     shape: '#e8e8e8',
     text: '#020202',
-    background: '#ffffff',
-    disabled: 'rgba(0, 0, 0, 0.38)',
+    background: '#e8e8e8',
+    disabled: 'rgba(0, 0, 0, 0.4)',
   },
 }
 

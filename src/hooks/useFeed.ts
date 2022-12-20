@@ -7,7 +7,7 @@ export function useFeed() {
 
   const [feed, setFeed] = useState<IPost[]>([]);
 
-  function incrementFeed() {
+  function loadPosts() {
     const newFeed = Array.from({ length: 10 }).map(() => ({
       id: faker.datatype.uuid(),
       username: faker.internet.userName(),
@@ -29,8 +29,8 @@ export function useFeed() {
   }
 
   useEffect(() => {
-    incrementFeed()
+    loadPosts()
   }, [])
 
-  return { feed, incrementFeed };
+  return { feed, loadPosts };
 }
