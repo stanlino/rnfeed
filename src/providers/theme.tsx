@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 import { useColorScheme } from "react-native";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
@@ -27,6 +27,10 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   function toggleTheme() {
     setTheme(currentTheme => currentTheme === 'light' ? 'dark' : 'light')
   }
+
+  useEffect(() => {
+    setTheme(userColorScheme ?? 'light')
+  }, [userColorScheme])
 
   return (
     <ThemeContext.Provider value={{
