@@ -8,9 +8,8 @@ import { Post } from '../../components/post'
 import {
   Container, 
   Header, 
-  HeaderRight, 
-  HeaderRightButton, 
-  HeaderRightIcon,
+  HeaderAction, 
+  HeaderActionIcon, 
   ItemSeparator
 } from './styles'
 
@@ -21,15 +20,13 @@ export function HomeScreen(){
   return (
     <Container>
       <Header>
+        <HeaderAction>
+          <HeaderActionIcon name="user" />
+        </HeaderAction>
         <Logo />
-        <HeaderRight>
-          <HeaderRightButton>
-            <HeaderRightIcon name="search" />
-          </HeaderRightButton>
-          <HeaderRightButton>
-            <HeaderRightIcon name="bell" />
-          </HeaderRightButton>
-        </HeaderRight>
+        <HeaderAction>
+          <HeaderActionIcon name="bell" />
+        </HeaderAction>
       </Header>
       <FlashList
         data={feed}

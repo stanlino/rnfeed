@@ -9,5 +9,5 @@ export const Container = styled.View`
 export const Icon = styled(MaterialCommunityIcons)`
   font-size: 24px;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.primary};
 `
